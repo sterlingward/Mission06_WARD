@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 
-public class JoelController : Controller
+namespace JoelHiltonFilmCollection.Controllers
 {
-    public IActionResult Index()
+    public class JoelController : Controller
     {
-        return View();
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

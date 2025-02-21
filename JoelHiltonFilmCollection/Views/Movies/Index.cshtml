@@ -1,37 +1,42 @@
-@model IEnumerable<Movie>
+@model List<JoelHiltonFilmCollection.Models.Movie>
 
-<h2>Movie Collection</h2>
+@{
+    ViewData["Title"] = "The Joel Hilton Film Collection";
+}
 
-<!-- Table to display the list of movies -->
-<table>
+<h2>The Joel Hilton Film Collection</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Movie</a>
+
+<table class="table table-striped table-hover">
     <thead>
     <tr>
-        <!-- Column headers for movie details -->
-        <th>Category</th>
         <th>Title</th>
         <th>Year</th>
         <th>Director</th>
         <th>Rating</th>
         <th>Edited</th>
-        <th>Lent To</th>
-        <th>Notes</th>
+        <th>Copied to Plex</th>
+        <th>Category</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <!-- Loop through each movie in the collection and display its details -->
     @foreach (var movie in Model)
     {
         <tr>
-            <td>@movie.Category</td>  <!-- Displays the movie category -->
-            <td>@movie.Title</td>  <!-- Displays the movie title -->
-            <td>@movie.Year</td>  <!-- Displays the release year -->
-            <td>@movie.Director</td>  <!-- Displays the director's name -->
-            <td>@movie.Rating</td>  <!-- Displays the movie rating (G, PG, etc.) -->
-            <td>@(movie.Edited ? "Yes" : "No")</td>  <!-- Displays "Yes" if edited, otherwise "No" -->
-            <td>@movie.LentTo</td>  <!-- Displays who the movie is lent to (if applicable) -->
-            <td>@movie.Notes</td>  <!-- Displays additional notes (limited to 25 characters) -->
+            <td>@movie.Title</td>
+            <td>@movie.Year</td>
+            <td>@movie.Director</td>
+            <td>@movie.Rating</td>
+            <td>@(movie.Edited ? "Yes" : "No")</td>
+            <td>@(movie.CopiedToPlex ? "Yes" : "No")</td>
+            <td>@(movie.Category?.CategoryName ?? "None")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@movie.MovieId" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@movie.MovieId" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
     }
     </tbody>
 </table>
-

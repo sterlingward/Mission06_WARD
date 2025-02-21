@@ -1,86 +1,52 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Sets the character encoding for the document -->
-    <meta charset="utf-8"/>
-
-    <!-- Ensures the page is responsive on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- Sets the page title dynamically using ViewData -->
-    <title>@ViewData["Title"] - JoelHiltonFilmCollection</title>
-
-    <!-- Links to Bootstrap CSS for styling -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-
-    <!-- Links to the site-specific stylesheet -->
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-
-    <!-- Links to additional styles for this project -->
-    <link rel="stylesheet" href="~/JoelHiltonFilmCollection.styles.css" asp-append-version="true"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Joel Hilton Film Collection</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-
-<header>
-    <!-- Navigation bar using Bootstrap classes -->
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <!-- Logo/Brand linking to the homepage -->
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">JoelHiltonFilmCollection</a>
-
-            <!-- Button for collapsing the navigation menu on smaller screens -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navigation menu items -->
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav">
-                    <!-- Link to Home page -->
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <!-- Link to "Get to Know Joel" page -->
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Joel" asp-action="Index">Get to Know Joel</a>
-                    </li>
-                    <!-- Link to Add Movie form -->
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Create">Add Movie</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Joel Hilton Film Collection</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Joel" asp-action="Index">Get to Know Joel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Movies" asp-action="Index">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Movies" asp-action="Create">Add Movie</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
-
-<!-- Main container for the page content -->
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody() <!-- This is where the content from other views will be injected -->
-    </main>
-</div>
-
-<!-- Footer section -->
-<footer class="border-top footer text-muted">
+        </nav>
+    </header>
     <div class="container">
-        &copy; 2025 - JoelHiltonFilmCollection -
-        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
-</footer>
 
-<!-- jQuery for JavaScript functionality -->
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-<!-- Bootstrap JavaScript bundle (includes popper.js) -->
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Site-specific JavaScript file -->
-<script src="~/js/site.js" asp-append-version="true"></script>
-
-<!-- Section for additional scripts that can be added in views -->
-@await RenderSectionAsync("Scripts", required: false)
-
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            © 2025 - Joel Hilton Film Collection - <a href="https://baconsale.com/">Baconsale</a>
+        </div>
+    </footer>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
