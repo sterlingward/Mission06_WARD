@@ -156,3 +156,4 @@
 /Users/sterling.com/RiderProjects/JoelHiltonFilmCollection/JoelHiltonFilmCollection/obj/Debug/net8.0/JoelHiltonFilmCollection.pdb
 /Users/sterling.com/RiderProjects/JoelHiltonFilmCollection/JoelHiltonFilmCollection/obj/Debug/net8.0/JoelHiltonFilmCollection.genruntimeconfig.cache
 /Users/sterling.com/RiderProjects/JoelHiltonFilmCollection/JoelHiltonFilmCollection/obj/Debug/net8.0/ref/JoelHiltonFilmCollection.dll
+/Users/sterling.com/RiderProjects/JoelHiltonFilmCollection/JoelHiltonFilmCollection/obj/Debug/net8.0/JoelHiltonFilmCollection.sourcelink.json
